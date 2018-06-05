@@ -4,7 +4,13 @@ import React from 'react'
 import { inputStyle } from './styles'
 
 const Input = ({ value, onChange }) => (
-  <input style={inputStyle} type="text" value={value} onChange={onChange} />
+  <input
+    style={inputStyle}
+    type="text"
+    value={value}
+    onChange={onChange}
+    placeholder="Input text to update the charts"
+  />
 )
 
 Input.propTypes = {
