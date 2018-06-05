@@ -5,4 +5,11 @@ import ReactDOM from 'react-dom'
 
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const AsyncMode = React.unstable_AsyncMode
+
+ReactDOM.render(
+  <AsyncMode>
+    <App />
+  </AsyncMode>,
+  document.getElementById('root')
+)
