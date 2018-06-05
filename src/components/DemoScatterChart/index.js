@@ -2,14 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Cell, Scatter, ScatterChart, XAxis, YAxis } from 'recharts'
 
-const colors = [
-  '#EF5350',
-  '#FFA726',
-  '#FFEE58',
-  '#66BB6A',
-  '#29B6F6',
-  '#AB47BC',
-]
+import { COLORS } from '../../constants'
 
 const DemoScatterChart = ({ data }) => (
   <ScatterChart
@@ -21,7 +14,7 @@ const DemoScatterChart = ({ data }) => (
     <YAxis dataKey={'y'} type="number" tick={false} />
     <Scatter data={data} fill="#8884d8">
       {data.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
       ))}
     </Scatter>
   </ScatterChart>

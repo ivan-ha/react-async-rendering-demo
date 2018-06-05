@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom'
 
 import DemoScatterChart from './components/DemoScatterChart'
 import Input from './components/Input'
+import { DATA_FACTOR } from './constants'
 import { Component } from './future'
 import { genListData } from './helpers/generateData'
 
 class App extends Component {
   state = {
     inputValue: '',
-    data: genListData(10),
+    data: genListData(DATA_FACTOR),
   }
 
   handleChange = evt => {
@@ -17,8 +18,8 @@ class App extends Component {
 
     this.setState({ inputValue: value })
 
-    this.deferSetState({
-      data: genListData(10 * (value.length || 1)),
+    this.setState({
+      data: genListData(DATA_FACTOR * (value.length || 1)),
     })
   }
 
