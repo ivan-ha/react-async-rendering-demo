@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { CartesianGrid, Scatter, ScatterChart, XAxis, YAxis } from 'recharts'
+import { Cell, Scatter, ScatterChart, XAxis, YAxis } from 'recharts'
+
+const colors = [
+  '#EF5350',
+  '#FFA726',
+  '#FFEE58',
+  '#66BB6A',
+  '#29B6F6',
+  '#AB47BC',
+]
 
 const DemoScatterChart = ({ data }) => (
   <ScatterChart
@@ -8,10 +17,13 @@ const DemoScatterChart = ({ data }) => (
     height={400}
     margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
   >
-    <CartesianGrid />
-    <XAxis dataKey={'x'} />
-    <YAxis dataKey={'y'} />
-    <Scatter name="A school" data={data} fill="#8884d8" />
+    <XAxis dataKey={'x'} type="number" tick={false} />
+    <YAxis dataKey={'y'} type="number" tick={false} />
+    <Scatter data={data} fill="#8884d8">
+      {data.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+      ))}
+    </Scatter>
   </ScatterChart>
 )
 

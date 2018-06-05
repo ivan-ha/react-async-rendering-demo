@@ -1,20 +1,15 @@
-import * as R from 'ramda'
 import React, { Fragment } from 'react'
+import ReactDOM from 'react-dom'
 
 import DemoScatterChart from './components/DemoScatterChart'
 import Input from './components/Input'
 import { Component } from './future'
-
-const getRandomNumber = () => Math.floor(Math.random() * 500 + 1)
-const getRandomData = () => ({
-  x: getRandomNumber(),
-  y: getRandomNumber(),
-})
+import { genListData } from './helpers/generateData'
 
 class App extends Component {
   state = {
     inputValue: '',
-    data: [],
+    data: genListData(10),
   }
 
   handleChange = evt => {
@@ -22,9 +17,9 @@ class App extends Component {
 
     this.setState({ inputValue: value })
 
-    this.deferSetState(({ data }) => ({
-      data: R.append(getRandomData(), data),
-    }))
+    this.deferSetState({
+      data: genListData(10 * (value.length || 1)),
+    })
   }
 
   render() {

@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import { inputStyle } from './styles'
+
 const Input = ({ value, onChange }) => (
-  <input type="text" value={value} onChange={onChange} />
+  <input style={inputStyle} type="text" value={value} onChange={onChange} />
 )
 
 Input.propTypes = {
