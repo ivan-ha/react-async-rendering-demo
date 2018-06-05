@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import DemoScatterChart from './components/DemoScatterChart'
 import Input from './components/Input'
 import { DATA_FACTOR } from './constants'
-import { Component } from './future'
+import { Component } from './helpers/future'
 import { genListData } from './helpers/generateData'
 
 class App extends Component {
