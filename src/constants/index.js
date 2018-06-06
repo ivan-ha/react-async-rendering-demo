@@ -1,5 +1,7 @@
 export const DATA_FACTOR = 10
 
+export const CHART_SIZE = 400
+
 export const COLORS = [
   '#EF5350',
   '#FFA726',

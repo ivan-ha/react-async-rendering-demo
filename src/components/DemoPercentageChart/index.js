@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Area, AreaChart, XAxis, YAxis } from 'recharts'
 
-import { COLORS } from '../../constants'
+import { CHART_SIZE } from '../../constants'
 
 const DemoPercentageChart = ({ data }) => (
   <AreaChart
-    width={400}
-    height={400}
+    width={CHART_SIZE}
+    height={CHART_SIZE}
     margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
     data={data}
   >

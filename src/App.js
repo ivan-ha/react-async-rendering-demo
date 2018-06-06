@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 
+import DemoBarChart from './components/DemoBarChart'
 import DemoPercentageChart from './components/DemoPercentageChart'
 import DemoScatterChart from './components/DemoScatterChart'
 import Input from './components/Input'
@@ -45,6 +46,7 @@ class App extends Component {
 
         <DemoScatterChart data={this.state.data} />
         <DemoPercentageChart data={this.state.data} />
+        <DemoBarChart data={this.state.data} />
       </Fragment>
     )
   }
