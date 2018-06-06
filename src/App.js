@@ -11,6 +11,8 @@ import { genListData } from './helpers/generateData'
 
 const INITIAL_DATA = genListData(DATA_FACTOR)
 
+const chartStyles = { display: 'flex' }
+
 class App extends Component {
   state = {
     inputValue: '',
@@ -44,9 +46,11 @@ class App extends Component {
         <Tab isAsync={this.state.isAsync} onClick={this.handleTabChange} />
         <Input value={this.state.inputValue} onChange={this.handleChange} />
 
-        <DemoScatterChart data={this.state.data} />
-        <DemoPercentageChart data={this.state.data} />
-        <DemoBarChart data={this.state.data} />
+        <div style={chartStyles}>
+          <DemoScatterChart data={this.state.data} />
+          <DemoPercentageChart data={this.state.data} />
+          <DemoBarChart data={this.state.data} />
+        </div>
       </Fragment>
     )
   }

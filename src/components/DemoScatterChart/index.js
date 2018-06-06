@@ -2,14 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Cell, Scatter, ScatterChart, XAxis, YAxis } from 'recharts'
 
-import { CHART_SIZE, COLORS } from '../../constants'
+import { CHART_MARGIN, CHART_SIZE, COLORS } from '../../constants'
 
 const DemoScatterChart = ({ data }) => (
-  <ScatterChart
-    width={CHART_SIZE}
-    height={CHART_SIZE}
-    margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-  >
+  <ScatterChart width={CHART_SIZE} height={CHART_SIZE} margin={CHART_MARGIN}>
     <XAxis dataKey={'x'} type="number" tick={false} />
     <YAxis dataKey={'y'} type="number" />
     <Scatter data={data}>
