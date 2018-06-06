@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import ReactDOM from 'react-dom'
 
 import DemoScatterChart from './components/DemoScatterChart'
 import Input from './components/Input'
