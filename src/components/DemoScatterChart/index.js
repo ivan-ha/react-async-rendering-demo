@@ -11,8 +11,8 @@ const DemoScatterChart = ({ data }) => (
     margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
   >
     <XAxis dataKey={'x'} type="number" tick={false} />
-    <YAxis dataKey={'y'} type="number" tick={false} />
-    <Scatter data={data} fill="#8884d8">
+    <YAxis dataKey={'y'} type="number" />
+    <Scatter data={data}>
       {data.map((entry, index) => (
         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
       ))}

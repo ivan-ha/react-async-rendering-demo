@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 
-const getRandomNumber = () => Math.floor(Math.random() * 500 + 1)
+const getRandomNumber = () => Math.floor(Math.random() * 600 + 1)
 
 const genList = R.curry((fn, num) =>
   R.compose(
@@ -11,6 +11,8 @@ const genList = R.curry((fn, num) =>
 )
 
 export const genListData = genList((v, i) => ({
+  index: i,
   x: getRandomNumber(),
   y: getRandomNumber(),
+  z: getRandomNumber(),
 }))

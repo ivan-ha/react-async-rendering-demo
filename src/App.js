@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 
+import DemoPercentageChart from './components/DemoPercentageChart'
 import DemoScatterChart from './components/DemoScatterChart'
 import Input from './components/Input'
 import Tab from './components/Tab'
@@ -41,7 +42,9 @@ class App extends Component {
       <Fragment>
         <Tab isAsync={this.state.isAsync} onClick={this.handleTabChange} />
         <Input value={this.state.inputValue} onChange={this.handleChange} />
+
         <DemoScatterChart data={this.state.data} />
+        <DemoPercentageChart data={this.state.data} />
       </Fragment>
     )
   }
