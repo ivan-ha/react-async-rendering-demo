@@ -1,3 +1,6 @@
+export const USER_NAME = 'ivan-ha'
+export const REPO_NAME = 'bookmark-url'
+
 export const DATA_FACTOR = 5
 
 export const CHART_SIZE = 400
