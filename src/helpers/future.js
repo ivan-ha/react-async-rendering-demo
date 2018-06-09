@@ -1,6 +1,22 @@
 import * as R from 'ramda'
-import React from 'react'
+import React, { Timeout } from 'react'
 import ReactDOM from 'react-dom'
+import { createCache, createResource } from 'simple-cache-provider'
+
+const cache = createCache(() => {})
+
+export const createFetcher = resolver => {
+  const resource = createResource(resolver)
+  return {
+    read: key => resource.read(cache, key),
+  }
+}
+
+export const Placeholder = props => (
+  <Timeout ms={props.delayMs}>
+    {didExpire => (didExpire ? props.fallback : props.children)}
+  </Timeout>
+)
 
 export class Component extends React.Component {
   deferSetState(updater, callback) {
