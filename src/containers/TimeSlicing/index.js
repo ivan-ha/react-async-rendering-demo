@@ -43,7 +43,12 @@ class TimeSlicing extends Component {
   render() {
     return (
       <Fragment>
-        <Tab isAsync={this.state.isAsync} onClick={this.handleTabChange} />
+        <Tab
+          isOn={this.state.isAsync}
+          onClick={this.handleTabChange}
+          leftValue={'Async Mode'}
+          rightValue={'Sync Mode'}
+        />
         <Input value={this.state.inputValue} onChange={this.handleChange} />
 
         <div style={chartStyles}>
