@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "ramda": "^0.25.0",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "react": "16.4.0-alpha.0911da3",
+    "react-dom": "16.4.0-alpha.0911da3",
     "react-scripts": "1.1.4",
     "recharts": "^1.0.0-beta.10",
     "simple-cache-provider": "^0.6.0"

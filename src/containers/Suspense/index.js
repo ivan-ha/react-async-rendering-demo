@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 import { REPO_NAME, USER_NAME } from '../../constants'
+import { createFetcher } from '../../helpers/future'
 import { fetchCommits, fetchRepos } from '../../helpers/githubApi'
 
-class Suspense extends Component {
-  componentDidMount() {
-    fetchRepos(USER_NAME)
-    fetchCommits(USER_NAME, REPO_NAME)
-  }
+const reposFetcher = createFetcher(fetchRepos)
 
+class Suspense extends Component {
   render() {
+    const repos = reposFetcher.read(USER_NAME)
+    console.log(repos)
     return <div>Suspense demo WIP</div>
   }
 }
