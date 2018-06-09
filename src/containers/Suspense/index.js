@@ -1,16 +1,11 @@
 import React, { Component } from 'react'
 
-import { REPO_NAME, USER_NAME } from '../../constants'
-import { createFetcher } from '../../helpers/future'
-import { fetchCommits, fetchRepos } from '../../helpers/githubApi'
-
-const reposFetcher = createFetcher(fetchRepos)
+import { USER_NAME } from '../../constants'
+import RepoListing from './RepoListing'
 
 class Suspense extends Component {
   render() {
-    const repos = reposFetcher.read(USER_NAME)
-    console.log(repos)
-    return <div>Suspense demo WIP</div>
+    return <RepoListing userName={USER_NAME} />
   }
 }
 
