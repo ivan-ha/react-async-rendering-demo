@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 
-import DemoBarChart from './components/DemoBarChart'
-import DemoPercentageChart from './components/DemoPercentageChart'
-import DemoScatterChart from './components/DemoScatterChart'
-import Input from './components/Input'
-import Tab from './components/Tab'
-import { DATA_FACTOR } from './constants'
-import { Component } from './helpers/future'
-import { genListData } from './helpers/generateData'
+import DemoBarChart from '../components/DemoBarChart'
+import DemoPercentageChart from '../components/DemoPercentageChart'
+import DemoScatterChart from '../components/DemoScatterChart'
+import Input from '../components/Input'
+import Tab from '../components/Tab'
+import { DATA_FACTOR } from '../constants'
+import { Component } from '../helpers/future'
+import { genListData } from '../helpers/generateData'
 
 const INITIAL_DATA = genListData(DATA_FACTOR)
 
