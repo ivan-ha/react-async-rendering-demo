@@ -3,6 +3,9 @@ export const tab = {
   height: 50,
   listStyle: 'none',
   padding: 0,
+  flex: 1,
+  '-webkit-margin-before': '0em',
+  '-webkit-margin-after': '0em',
 }
 
 export const content = {

@@ -1,5 +1,6 @@
 export const containerStyle = {
   display: 'flex',
+  flex: 1,
 }
 
 export const inputStyle = {

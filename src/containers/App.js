@@ -4,6 +4,8 @@ import Tab from '../components/Tab'
 import Suspense from './Suspense'
 import TimeSlicing from './TimeSlicing'
 
+const mainAppStyles = { marginTop: 20 }
+
 class App extends Component {
   state = {
     isTimeSlicing: true,
@@ -11,8 +13,11 @@ class App extends Component {
 
   handleTabChange = isTimeSlicing => this.setState({ isTimeSlicing })
 
-  renderMainApp = () =>
-    this.state.isTimeSlicing ? <TimeSlicing /> : <Suspense />
+  renderMainApp = () => (
+    <div style={mainAppStyles}>
+      {this.state.isTimeSlicing ? <TimeSlicing /> : <Suspense />}
+    </div>
+  )
 
   render() {
     return (

@@ -8,10 +8,9 @@ import Tab from '../../components/Tab'
 import { DATA_FACTOR } from '../../constants'
 import { Component } from '../../helpers/future'
 import { genListData } from '../../helpers/generateData'
+import * as styles from './styles'
 
 const INITIAL_DATA = genListData(DATA_FACTOR)
-
-const chartStyles = { display: 'flex' }
 
 class TimeSlicing extends Component {
   state = {
@@ -43,15 +42,17 @@ class TimeSlicing extends Component {
   render() {
     return (
       <Fragment>
-        <Tab
-          isOn={this.state.isAsync}
-          onClick={this.handleTabChange}
-          leftValue={'Async Mode'}
-          rightValue={'Sync Mode'}
-        />
-        <Input value={this.state.inputValue} onChange={this.handleChange} />
+        <div style={styles.containerStyles}>
+          <Tab
+            isOn={this.state.isAsync}
+            onClick={this.handleTabChange}
+            leftValue={'Async Mode'}
+            rightValue={'Sync Mode'}
+          />
+          <Input value={this.state.inputValue} onChange={this.handleChange} />
+        </div>
 
-        <div style={chartStyles}>
+        <div style={styles.containerStyles}>
           <DemoScatterChart data={this.state.data} />
           <DemoPercentageChart data={this.state.data} />
           <DemoBarChart data={this.state.data} />
