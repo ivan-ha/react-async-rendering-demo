@@ -4,8 +4,8 @@ export const tab = {
   listStyle: 'none',
   padding: 0,
   flex: 1,
-  '-webkit-margin-before': '0em',
-  '-webkit-margin-after': '0em',
+  WebkitMarginBefore: '0em',
+  WebkitMarginAfter: '0em',
 }
 
 export const content = {
