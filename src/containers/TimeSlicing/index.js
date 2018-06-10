@@ -5,12 +5,12 @@ import DemoPercentageChart from '../../components/DemoPercentageChart'
 import DemoScatterChart from '../../components/DemoScatterChart'
 import Input from '../../components/Input'
 import Tab from '../../components/Tab'
-import { DATA_FACTOR } from '../../constants'
+import { CHART_DATA_FACTOR } from '../../constants'
 import { Component } from '../../helpers/future'
 import { genListData } from '../../helpers/generateData'
 import * as styles from './styles'
 
-const INITIAL_DATA = genListData(DATA_FACTOR)
+const INITIAL_DATA = genListData(CHART_DATA_FACTOR)
 
 class TimeSlicing extends Component {
   state = {
@@ -22,7 +22,7 @@ class TimeSlicing extends Component {
   handleChange = evt => {
     const value = evt.target.value
     const newDataSet = {
-      data: genListData(DATA_FACTOR * (value.length || 1)),
+      data: genListData(CHART_DATA_FACTOR * (value.length || 1)),
     }
 
     this.setState({ inputValue: value })

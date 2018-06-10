@@ -1,7 +1,8 @@
-export const USER_NAME = 'ivan-ha'
-export const REPO_NAME = 'bookmark-url'
+export const GITHUB_USER_NAME = 'ivan-ha'
 
-export const DATA_FACTOR = 5
+export const PLACEHOLDER_DELAY_MS = 1000
+
+export const CHART_DATA_FACTOR = 5
 
 export const CHART_SIZE = 400
 

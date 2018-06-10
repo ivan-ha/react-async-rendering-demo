@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Spinner from '../../components/Spinner'
-import { COLORS } from '../../constants'
+import { COLORS, PLACEHOLDER_DELAY_MS } from '../../constants'
 import { Component, Placeholder } from '../../helpers/future'
 import { createFetcher } from '../../helpers/future'
 import RepoListing from './RepoListing'
@@ -41,7 +41,10 @@ class Suspense extends Component {
 
   render() {
     return (
-      <Placeholder fallback={<Spinner size="large" />} delayMs={1000}>
+      <Placeholder
+        fallback={<Spinner size="large" />}
+        delayMs={PLACEHOLDER_DELAY_MS}
+      >
         {this.state.showCommitListing && (
           <div style={backButtonStyles} onClick={this.handleBackClick}>
             👈 Back
