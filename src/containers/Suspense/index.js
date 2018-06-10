@@ -6,10 +6,25 @@ import { Placeholder } from '../../helpers/future'
 import RepoListing from './RepoListing'
 
 class Suspense extends Component {
+  state = {
+    currentRepoId: null,
+  }
+
+  handleRepoClick = currentRepoId => this.setState({ currentRepoId })
+
+  handleBackClick = () => this.setState({ currentRepoId: null })
+
   render() {
     return (
       <Placeholder fallback={<Spinner size="large" />} delayMs={1000}>
-        <RepoListing userName={USER_NAME} />
+        {this.state.currentRepoId && (
+          <div onClick={this.handleBackClick}>BACK</div>
+        )}
+        {!this.state.currentRepoId ? (
+          <RepoListing userName={USER_NAME} onClick={this.handleRepoClick} />
+        ) : (
+          <p>WIP</p>
+        )}
       </Placeholder>
     )
   }
