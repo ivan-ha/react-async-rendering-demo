@@ -7,8 +7,8 @@ import { fetchRepos } from '../../helpers/githubApi'
 
 const reposFetcher = createFetcher(fetchRepos)
 
-const RepoListing = ({ userName, onClick }) => {
-  const repos = reposFetcher.read(userName)
+const RepoListing = ({ onClick }) => {
+  const repos = reposFetcher.read()
 
   return (
     <Fragment>
@@ -16,8 +16,9 @@ const RepoListing = ({ userName, onClick }) => {
         <ListItem
           key={repo.id}
           value={repo.name}
-          onClick={() => onClick(repo.id)}
+          onClick={() => onClick(repo.name)}
           index={index}
+          isRainbow
         />
       ))}
     </Fragment>
@@ -25,7 +26,6 @@ const RepoListing = ({ userName, onClick }) => {
 }
 
 RepoListing.propTypes = {
-  userName: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 }
 

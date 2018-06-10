@@ -1,29 +1,41 @@
 import React, { Component } from 'react'
 
 import Spinner from '../../components/Spinner'
-import { USER_NAME } from '../../constants'
+import { COLORS, USER_NAME } from '../../constants'
 import { Placeholder } from '../../helpers/future'
+import CommitListing from './CommitListing'
 import RepoListing from './RepoListing'
+
+const backButtonStyles = {
+  fontSize: 30,
+  backgroundColor: COLORS[0],
+  borderRadius: 4,
+  color: 'black',
+  textAlign: 'center',
+  width: 150,
+}
 
 class Suspense extends Component {
   state = {
-    currentRepoId: null,
+    currentRepoName: null,
   }
 
-  handleRepoClick = currentRepoId => this.setState({ currentRepoId })
+  handleRepoClick = currentRepoName => this.setState({ currentRepoName })
 
-  handleBackClick = () => this.setState({ currentRepoId: null })
+  handleBackClick = () => this.setState({ currentRepoName: null })
 
   render() {
     return (
       <Placeholder fallback={<Spinner size="large" />} delayMs={1000}>
-        {this.state.currentRepoId && (
-          <div onClick={this.handleBackClick}>BACK</div>
+        {this.state.currentRepoName && (
+          <div style={backButtonStyles} onClick={this.handleBackClick}>
+            👈 Back
+          </div>
         )}
-        {!this.state.currentRepoId ? (
-          <RepoListing userName={USER_NAME} onClick={this.handleRepoClick} />
+        {!this.state.currentRepoName ? (
+          <RepoListing onClick={this.handleRepoClick} />
         ) : (
-          <p>WIP</p>
+          <CommitListing repoName={this.state.currentRepoName} />
         )}
       </Placeholder>
     )

@@ -4,13 +4,13 @@ import React from 'react'
 import { COLORS } from '../../constants'
 import * as styles from './styles'
 
-const ListItem = ({ value, onClick, index }) => {
+const ListItem = ({ value, onClick, index, isRainbow }) => {
   return (
     <div
       onClick={onClick}
       style={{
         ...styles.container,
-        backgroundColor: COLORS[index % COLORS.length],
+        backgroundColor: isRainbow ? COLORS[index % COLORS.length] : COLORS[6],
       }}
     >
       {value}
@@ -20,8 +20,9 @@ const ListItem = ({ value, onClick, index }) => {
 
 ListItem.propTypes = {
   value: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   index: PropTypes.number.isRequired,
+  isRainbow: PropTypes.bool,
 }
 
 export default ListItem
