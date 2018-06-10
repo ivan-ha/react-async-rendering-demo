@@ -27,7 +27,7 @@ const RepoListing = ({ loadingRepoName, onClick }) => {
 }
 
 RepoListing.propTypes = {
-  loadingRepoName: PropTypes.string.isRequired,
+  loadingRepoName: PropTypes.string,
   onClick: PropTypes.func.isRequired,
 }
 

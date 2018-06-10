@@ -47,7 +47,10 @@ class Suspense extends Component {
       >
         {this.state.showCommitListing && (
           <div style={backButtonStyles} onClick={this.handleBackClick}>
-            👈 Back
+            <span role="img" aria-label="Back">
+              👈
+            </span>{' '}
+            Back
           </div>
         )}
         {!this.state.showCommitListing ? (
