@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Area, AreaChart, XAxis, YAxis } from 'recharts'
 
-import { CHART_MARGIN, CHART_SIZE } from '../../constants'
+import { CHART_MARGIN, CHART_SIZE, COLORS } from '../../constants'
 
 const DemoPercentageChart = ({ data }) => (
   <AreaChart
@@ -18,22 +18,22 @@ const DemoPercentageChart = ({ data }) => (
       type="monotone"
       dataKey="x"
       stackId="1"
-      stroke="#8884d8"
-      fill="#8884d8"
+      stroke={COLORS[6]}
+      fill={COLORS[6]}
     />
     <Area
       type="monotone"
       dataKey="y"
       stackId="1"
-      stroke="#82ca9d"
-      fill="#82ca9d"
+      stroke={COLORS[7]}
+      fill={COLORS[7]}
     />
     <Area
       type="monotone"
       dataKey="z"
       stackId="1"
-      stroke="#ffc658"
-      fill="#ffc658"
+      stroke={COLORS[8]}
+      fill={COLORS[8]}
     />
   </AreaChart>
 )

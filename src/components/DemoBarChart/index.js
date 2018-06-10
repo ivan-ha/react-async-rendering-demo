@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Bar, BarChart, XAxis, YAxis } from 'recharts'
 
-import { CHART_MARGIN, CHART_SIZE } from '../../constants'
+import { CHART_MARGIN, CHART_SIZE, COLORS } from '../../constants'
 
 const DemoBarChart = ({ data }) => (
   <BarChart
@@ -13,8 +13,8 @@ const DemoBarChart = ({ data }) => (
   >
     <XAxis dataKey="index" tick={false} />
     <YAxis />
-    <Bar dataKey="x" fill="#8884d8" />
-    <Bar dataKey="y" fill="#82ca9d" />
+    <Bar dataKey="x" fill={COLORS[6]} />
+    <Bar dataKey="y" fill={COLORS[7]} />
   </BarChart>
 )
 
