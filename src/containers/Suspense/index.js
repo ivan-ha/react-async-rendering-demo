@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Spinner from '../../components/Spinner'
-import { COLORS, USER_NAME } from '../../constants'
+import { COLORS } from '../../constants'
 import { Placeholder } from '../../helpers/future'
 import { createFetcher } from '../../helpers/future'
 import RepoListing from './RepoListing'
