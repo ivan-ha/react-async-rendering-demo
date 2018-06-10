@@ -1,7 +1,4 @@
-import { COLORS } from '../../constants'
-
 export const container = {
-  backgroundColor: COLORS[5],
   borderRadius: 4,
   color: 'black',
   fontFamily: 'monospace',

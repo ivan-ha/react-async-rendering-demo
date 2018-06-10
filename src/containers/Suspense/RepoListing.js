@@ -12,8 +12,13 @@ const RepoListing = ({ userName }) => {
 
   return (
     <div>
-      {repos.map(repo => (
-        <ListItem key={repo.id} value={repo.name} onClick={() => {}} />
+      {repos.map((repo, index) => (
+        <ListItem
+          key={repo.id}
+          value={repo.name}
+          onClick={() => {}}
+          index={index}
+        />
       ))}
     </div>
   )
