@@ -14,10 +14,11 @@ const CommitListing = ({ repoName }) => {
   return (
     <Fragment>
       <h1>{repoName}</h1>
+
       {commits.map((commit, index) => (
         <ListItem
           key={commit.sha}
-          value={`${R.take(7, commit.sha)} ${commit.commit.message}`}
+          value={`[${R.take(7, commit.sha)}] ${commit.commit.message}`}
           index={index}
         />
       ))}

@@ -8,4 +8,5 @@ export const container = {
   padding: 'auto',
   paddingLeft: 15,
   paddingTop: 15,
+  display: 'flex',
 }

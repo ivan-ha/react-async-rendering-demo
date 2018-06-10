@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Spinner from '../../components/Spinner'
 import { COLORS } from '../../constants'
-import { Placeholder } from '../../helpers/future'
+import { Component, Placeholder } from '../../helpers/future'
 import { createFetcher } from '../../helpers/future'
 import RepoListing from './RepoListing'
 
@@ -24,22 +24,34 @@ const CommitListingLoader = props => {
 class Suspense extends Component {
   state = {
     currentRepoName: null,
+    showCommitListing: false,
   }
 
-  handleRepoClick = currentRepoName => this.setState({ currentRepoName })
+  handleRepoClick = currentRepoName => {
+    this.setState({ currentRepoName })
+    this.deferSetState({ showCommitListing: true })
+  }
 
-  handleBackClick = () => this.setState({ currentRepoName: null })
+  handleBackClick = () => {
+    this.setState({
+      currentRepoName: null,
+      showCommitListing: false,
+    })
+  }
 
   render() {
     return (
       <Placeholder fallback={<Spinner size="large" />} delayMs={1000}>
-        {this.state.currentRepoName && (
+        {this.state.showCommitListing && (
           <div style={backButtonStyles} onClick={this.handleBackClick}>
             👈 Back
           </div>
         )}
-        {!this.state.currentRepoName ? (
-          <RepoListing onClick={this.handleRepoClick} />
+        {!this.state.showCommitListing ? (
+          <RepoListing
+            loadingRepoName={this.state.currentRepoName}
+            onClick={this.handleRepoClick}
+          />
         ) : (
           <CommitListingLoader repoName={this.state.currentRepoName} />
         )}

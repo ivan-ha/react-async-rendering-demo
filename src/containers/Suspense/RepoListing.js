@@ -7,7 +7,7 @@ import { fetchRepos } from '../../helpers/githubApi'
 
 const reposFetcher = createFetcher(fetchRepos)
 
-const RepoListing = ({ onClick }) => {
+const RepoListing = ({ loadingRepoName, onClick }) => {
   const repos = reposFetcher.read()
 
   return (
@@ -18,6 +18,7 @@ const RepoListing = ({ onClick }) => {
           value={repo.name}
           onClick={() => onClick(repo.name)}
           index={index}
+          isLoading={repo.name === loadingRepoName}
           isRainbow
         />
       ))}
@@ -26,6 +27,7 @@ const RepoListing = ({ onClick }) => {
 }
 
 RepoListing.propTypes = {
+  loadingRepoName: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 }
 
