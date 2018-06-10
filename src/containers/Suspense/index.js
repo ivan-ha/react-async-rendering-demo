@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Spinner from '../../components/Spinner'
 import { COLORS, USER_NAME } from '../../constants'
 import { Placeholder } from '../../helpers/future'
-import CommitListing from './CommitListing'
+import { createFetcher } from '../../helpers/future'
 import RepoListing from './RepoListing'
 
 const backButtonStyles = {
@@ -13,6 +13,12 @@ const backButtonStyles = {
   color: 'black',
   textAlign: 'center',
   width: 150,
+}
+
+const commitListingFetcher = createFetcher(() => import('./CommitListing'))
+const CommitListingLoader = props => {
+  const CommitListing = commitListingFetcher.read().default
+  return <CommitListing {...props} />
 }
 
 class Suspense extends Component {
@@ -35,7 +41,7 @@ class Suspense extends Component {
         {!this.state.currentRepoName ? (
           <RepoListing onClick={this.handleRepoClick} />
         ) : (
-          <CommitListing repoName={this.state.currentRepoName} />
+          <CommitListingLoader repoName={this.state.currentRepoName} />
         )}
       </Placeholder>
     )
