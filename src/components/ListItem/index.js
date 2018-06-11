@@ -5,13 +5,12 @@ import { COLORS } from '../../constants'
 import Spinner from '../Spinner'
 import * as styles from './styles'
 
-const ListItem = ({ value, onClick, index, isLoading, isRainbow }) => {
+const ListItem = ({ value, onClick, index, isLoading }) => {
   return (
     <div
       onClick={onClick}
       style={{
         ...styles.container,
-        backgroundColor: isRainbow ? COLORS[index % COLORS.length] : COLORS[6],
         cursor: onClick ? 'pointer' : 'default',
       }}
     >
@@ -26,7 +25,6 @@ ListItem.propTypes = {
   onClick: PropTypes.func,
   index: PropTypes.number.isRequired,
   isLoading: PropTypes.bool,
-  isRainbow: PropTypes.bool,
 }
 
 export default ListItem

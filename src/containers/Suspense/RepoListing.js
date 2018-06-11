@@ -19,7 +19,6 @@ const RepoListing = ({ loadingRepoName, onClick }) => {
           onClick={() => onClick(repo.name)}
           index={index}
           isLoading={repo.name === loadingRepoName}
-          isRainbow
         />
       ))}
     </Fragment>
