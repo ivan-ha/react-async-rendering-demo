@@ -1,6 +1,7 @@
 export const tab = {
   display: 'flex',
   height: 50,
+  cursor: 'pointer',
   listStyle: 'none',
   padding: 0,
   flex: 1,

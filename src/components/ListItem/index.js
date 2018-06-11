@@ -12,6 +12,7 @@ const ListItem = ({ value, onClick, index, isLoading, isRainbow }) => {
       style={{
         ...styles.container,
         backgroundColor: isRainbow ? COLORS[index % COLORS.length] : COLORS[6],
+        cursor: onClick ? 'pointer' : 'default',
       }}
     >
       {value}

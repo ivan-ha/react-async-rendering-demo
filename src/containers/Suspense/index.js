@@ -11,6 +11,7 @@ const backButtonStyles = {
   backgroundColor: COLORS[0],
   borderRadius: 4,
   color: 'black',
+  cursor: 'pointer',
   textAlign: 'center',
   width: 150,
 }
