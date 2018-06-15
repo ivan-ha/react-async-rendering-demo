@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { COLORS } from '../../constants'
 import Spinner from '../Spinner'
 import * as styles from './styles'
 
