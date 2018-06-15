@@ -28,7 +28,7 @@ class TimeSlicing extends Component {
     this.setState({ inputValue: value })
 
     /**
-     * Change this to deferSetState
+     * DEMO: Change this to deferSetState
      */
     this.setState(newDataSet)
   }
