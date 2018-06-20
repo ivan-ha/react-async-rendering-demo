@@ -12,6 +12,10 @@ This demo is for [my sharing in HKOSCon 2018](https://hkoscon.org/2018/topic/rea
 
 https://ivan-ha.github.io/react-async-rendering-demo/
 
+## Presentation Slides
+
+https://www.slideshare.net/hangolam/react-async-rendering-102558178
+
 ## Time Slicing
 
 > ... to ensure that high-priority updates don’t get blocked by a low-priority update.
