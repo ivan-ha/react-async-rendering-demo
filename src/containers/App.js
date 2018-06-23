@@ -25,8 +25,8 @@ class App extends Component {
         <Tab
           isOn={this.state.isTimeSlicing}
           onClick={this.handleTabChange}
-          leftValue={'Time Slicing Demo'}
-          rightValue={'Suspense Demo'}
+          leftValue={'Demo 1'}
+          rightValue={'Demo 2'}
         />
         {this.renderMainApp()}
       </Fragment>

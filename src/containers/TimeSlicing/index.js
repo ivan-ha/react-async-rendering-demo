@@ -27,9 +27,10 @@ class TimeSlicing extends Component {
 
     this.setState({ inputValue: value })
 
-    this.state.isAsync
-      ? this.deferSetState(newDataSet)
-      : this.setState(newDataSet)
+    /**
+     * DEMO: Change this to deferSetState
+     */
+    this.setState(newDataSet)
   }
 
   handleTabChange = isAsync =>
